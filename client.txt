@@ -1,0 +1,2 @@
+Bogdan, Oradea, Transilvaniei, 1, 1
+Client, City, Street,1, 2
