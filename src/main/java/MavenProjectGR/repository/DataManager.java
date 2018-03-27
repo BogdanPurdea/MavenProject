@@ -7,19 +7,26 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class DataManager {
-	private final static String fileClient = "client.txt";
-    private final static String fileIssue = "issue.txt";
+	private String fileClient = "client.txt";
+    private String fileIssue = "issue.txt";
     public ArrayList<Client> Clients;
     public ArrayList<Issue> Issues;
     
     public DataManager(){
         Clients = new ArrayList<>();
         Issues = new ArrayList<>();
-        
+
         LoadClient();
         LoadIssues();
     }
-    
+    public DataManager(String fileClient, String fileIssue){
+        Clients = new ArrayList<>();
+        Issues = new ArrayList<>();
+        this.fileClient = fileClient;
+        this.fileIssue = fileIssue;
+        LoadClient();
+        LoadIssues();
+    }
     private void LoadClient(){
         try{
             BufferedReader br = new BufferedReader(new FileReader(fileClient)); 

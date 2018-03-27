@@ -1,9 +1,8 @@
 package MavenProjectGR.controller;
 
-import MavenProjectGR.model.*;
+import MavenProjectGR.model.Client;
+import MavenProjectGR.model.Issue;
 import MavenProjectGR.repository.DataManager;
-
-import java.util.ArrayList;
 
 public class ClientController {
 	private DataManager _dataManager;
@@ -11,7 +10,12 @@ public class ClientController {
     public ClientController(){
         _dataManager = new DataManager();
     }
-    
+
+    public ClientController(DataManager dataManager){
+        _dataManager = dataManager;
+    }
+
+
     private String ValidateClient(String name, String address, String id){
         if(!name.equals("") && !address.equals("") && !name.equals(" ")){
             for(int i=0;i<name.length();i++){
